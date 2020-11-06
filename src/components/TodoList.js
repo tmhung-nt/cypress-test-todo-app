@@ -5,7 +5,7 @@ const TodoItem = props =>
     <div className="view">
       <input className="toggle" type="checkbox" />
       <label>
-        Do Stuff
+        'Do something'
       </label>
       <button className="destroy" />
     </div>
