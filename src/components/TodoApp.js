@@ -36,7 +36,7 @@ export default class TodoApp extends Component {
   }
 
   handleTodoSubmit(evt) {
-    // evt.preventDefault()
+    evt.preventDefault()
     const newTodo = {name : this.state.currentTodo, isComplete: false}
     saveTodo(newTodo)
       .then(({data}) => {

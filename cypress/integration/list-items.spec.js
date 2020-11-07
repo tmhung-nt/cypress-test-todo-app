@@ -17,7 +17,7 @@ describe('List items', () => {
             .should('contain', 3)
     })
 
-    it.only('remove todo', () => {
+    it('remove todo', () => {
         cy.server()
         cy.route({
             url: '/api/todos/1',
