@@ -40,19 +40,18 @@ export default class TodoApp extends Component {
   handleTodoSubmit(evt) {
     evt.preventDefault()
     const newTodo = {name : this.state.currentTodo, isComplete: false}
-    setTimeout(() => {
-      saveTodo(newTodo)
-      .then(({data}) => {
-        this.setState({
-          todos: this.state.todos.concat(data),
-          currentTodo: ''
-        })
+    
+    saveTodo(newTodo)
+    .then(({data}) => {
+      this.setState({
+        todos: this.state.todos.concat(data),
+        currentTodo: ''
       })
-      .catch((err) => {
-        this.setState({error: true})
-        console.log("Submit failed: " + err)
-      })
-    }, 4500)
+    })
+    .catch((err) => {
+      this.setState({error: true})
+      console.log("Submit failed: " + err)
+    })
     
   }
 
