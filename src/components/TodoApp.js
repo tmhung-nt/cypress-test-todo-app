@@ -4,7 +4,7 @@ import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import Footer from './Footer'
 import { saveTodo, loadTodos, destroyTodo, updateTodo } from '../lib/service'
-
+import { filterTodos } from '../lib/utils';
 
 export default class TodoApp extends Component {
   constructor(props) {
@@ -13,6 +13,26 @@ export default class TodoApp extends Component {
     this.state = {
       currentTodo: '',
       todos: [
+        {
+          "id": 1,
+          "name": "Buy Milk",
+          "isComplete": false
+        },
+        {
+          "id": 2,
+          "name": "Buy Eggs",
+          "isComplete": true
+        },
+        {
+          "id": 3,
+          "name": "Buy Bread",
+          "isComplete": false
+        },
+        {
+          "id": 4,
+          "name": "Make French Toast",
+          "isComplete": false
+        }
       ]
     }
 
@@ -71,15 +91,6 @@ export default class TodoApp extends Component {
 
     updateTodo(update)
       .then(({data}) => {
-        // const targetIndex = this.state.todos.findIndex(t => t.id === data.id)
-
-        // const todos = [
-        //   ...this.state.todos.slice(0, targetIndex), 
-        //   data,
-        //   ...this.state.todos.slice(targetIndex + 1)
-
-        // ]
-
         const todos = this.state.todos.map(
           t => t.id === data.id ? data : t
         )
@@ -105,10 +116,12 @@ export default class TodoApp extends Component {
             />
           </header>
           <section className="main">
-            <TodoList todos={this.state.todos} 
-              handleRemoveTodo={this.handleRemoveTodo}
-              handleToggle={this.handleToggle}
+            <Route path='/:filter?' render={({match}) => 
+              <TodoList todos={filterTodos(match.params.filter, this.state.todos)} 
+                handleRemoveTodo={this.handleRemoveTodo}
+                handleToggle={this.handleToggle}
               />
+            } />
           </section>
           <Footer remainingTodos={remainingTodos} />
         </div>
