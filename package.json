@@ -9,8 +9,7 @@
     "serve": "json-server db.json",
     "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "cypress": "cypress open",
-    "cypress:all": "cypress run",
-    "cypress:dashboard": "cypress run --record --key 659bd20c-9ea0-49bf-b634-0aceef2e2b14"
+    "cypress:all": "cypress run"
   },
   "keywords": [],
   "author": "",
