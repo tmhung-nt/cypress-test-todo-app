@@ -13,3 +13,9 @@ jobs:
         with:
           build: npm run build
           start: npm run serve
+          record: true
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: 659bd20c-9ea0-49bf-b634-0aceef2e2b14
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
