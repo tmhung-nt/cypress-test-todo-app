@@ -9,7 +9,8 @@
     "serve": "json-server db.json",
     "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "cypress": "cypress open",
-    "cypress:all": "cypress run"
+    "cypress:all": "cypress run",
+    "cypress:dashboard": "cypress run --record --key 659bd20c-9ea0-49bf-b634-0aceef2e2b14"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.11",
-    "cypress": "3.5.0",
+    "cypress": "5.5.0",
     "html-webpack-plugin": "2.30.1",
     "style-loader": "0.19.1",
     "webpack": "3.12.0"

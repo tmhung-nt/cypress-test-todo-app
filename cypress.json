@@ -1,3 +1,8 @@
 {
-    "baseUrl": "http://localhost:3030"
+    "baseUrl": "http://localhost:3030",
+    "projectId": "sitfaf",
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+      }
 }
