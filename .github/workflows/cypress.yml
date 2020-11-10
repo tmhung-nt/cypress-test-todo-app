@@ -15,4 +15,4 @@ jobs:
           start: npm run serve
           record: true
         env:
-          CYPRESS_RECORD_KEY: 659bd20c-9ea0-49bf-b634-0aceef2e2b14
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
