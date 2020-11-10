@@ -9,7 +9,7 @@ describe('Smoke tests', () => {
             const items = [
                 {text: 'Buy milk', expectedLenghth: 1},
                 {text: 'Buy eggs', expectedLenghth: 2},
-                {text: 'Buy car', expectedLenghth: 3}
+                {text: 'Buy car', expectedLenghth: 4}
             ]
 
             cy.wrap(items)
